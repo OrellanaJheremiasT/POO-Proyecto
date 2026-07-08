@@ -1,0 +1,35 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Verificar versión de Java
+      run: java -version
+
+    - name: Compilar proyecto
+      run: |
+        mkdir -p build
+        find src -name "*.java" > sources.txt
+        javac -d build @sources.txt
+
+    - name: Verificar compilación
+      run: |
+        echo "✅ El proyecto compila correctamente"
