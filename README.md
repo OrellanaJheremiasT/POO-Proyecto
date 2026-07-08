@@ -1,76 +1,155 @@
-# POO-Proyecto
+# 📦 Sistema de Gestión de Inventario (POO - Java)
 
-**Proyecto final del curso de Programación Orientada a Objetos**
-
-Sistema de gestión de inventario desarrollado en Java. Permite administrar productos, categorías y usuarios, con persistencia en archivos CSV y un sistema básico de autenticación y registro de operaciones (logs).
-
----
-
-## ✨ Características principales
-
-- **Gestión de productos**: Crear, editar, listar y eliminar productos. Cada producto tiene precio, stock y una categoría asociada.
-- **Gestión de categorías**: Administrar categorías con ID, nombre y descripción.
-- **Autenticación de usuarios**: Inicio de sesión para controlar el acceso al sistema.
-- **Persistencia en CSV**: Los datos se guardan en archivos CSV. Cada clase del modelo implementa `toCSV()` y `fromCSV()` para serializar/deserializar.
-- **Registro de logs**: Cada operación importante (altas, bajas, modificaciones) se registra con fecha, hora y usuario.
-- **Validaciones**: Precios positivos, IDs únicos, existencia de categorías antes de asignar a un producto, etc.
+Proyecto final del curso de **Programación Orientada a Objetos**.
+Este sistema permite administrar productos, categorías y usuarios utilizando Java puro, aplicando principios de POO y almacenamiento en archivos CSV.
 
 ---
 
-## 🧱 Tecnologías
+## ✨ Características
 
-- **Java** (100% del código)
-- **CSV** como almacenamiento persistente
-- **Programación orientada a objetos**: herencia, encapsulamiento, interfaces (`Persistible`, `Autenticable`)
+* 🔹 **Gestión de productos**
+
+  * Crear, editar, listar y eliminar productos
+  * Cada producto tiene: precio, stock y categoría
+  * Cálculo automático del valor total (precio × stock)
+
+* 🔹 **Gestión de categorías**
+
+  * Crear y administrar categorías
+  * Atributos: ID, nombre y descripción
+
+* 🔹 **Autenticación de usuarios**
+
+  * Inicio de sesión para acceso al sistema
+  * Control básico de usuarios
+
+* 🔹 **Persistencia en CSV**
+
+  * Almacenamiento simple sin base de datos
+  * Cada modelo implementa:
+
+    * `toCSV()` → serialización
+    * `fromCSV()` → deserialización
+
+* 🔹 **Registro de logs**
+
+  * Seguimiento de operaciones importantes
+  * Incluye: fecha, hora, usuario y acción
+
+* 🔹 **Validaciones**
+
+  * Precios positivos
+  * IDs únicos
+  * Verificación de existencia de categorías
+  * Control de datos inválidos
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+* ☕ **Java**
+* 📄 **Archivos CSV** (persistencia de datos)
+* 🧩 **Programación Orientada a Objetos**
+
+  * Encapsulamiento
+  * Herencia
+  * Polimorfismo
+  * Abstracción
+  * Interfaces (`Persistible`, `Autenticable`)
 
 ---
 
 ## 📁 Estructura del proyecto
+
+```
 src/
 ├── controller/
-│ ├── CategoriaController.java
-│ ├── ProductoController.java
-│ ├── Resultado.java # Envuelve resultados de operaciones
-│ └── UsuarioController.java
+│   ├── CategoriaController.java
+│   ├── ProductoController.java
+│   ├── UsuarioController.java
+│   └── Resultado.java
+│
 ├── model/
-│ ├── Autenticable.java # Interface para login
-│ ├── Categoria.java
-│ ├── CategoriaModel.java # Lógica de negocio para categorías
-│ ├── LogEntry.java
-│ ├── LogModel.java
-│ ├── Persistible.java # Interface para CSV
-│ ├── Persona.java # Clase base para Usuario
-│ ├── Producto.java # Extiende ProductoBase
-│ ├── ProductoBase.java
-│ └── ProductoModel.java # Lógica de negocio para productos
+│   ├── Autenticable.java
+│   ├── Persistible.java
+│   ├── Persona.java
+│   ├── Categoria.java
+│   ├── CategoriaModel.java
+│   ├── ProductoBase.java
+│   ├── Producto.java
+│   ├── ProductoModel.java
+│   ├── LogEntry.java
+│   └── LogModel.java
+│
 └── util/
-├── CSVUtil.java # Lectura/escritura genérica de CSV
-├── Rutas.java # Constantes con rutas de archivos
-└── Validador.java # Validaciones comunes
+    ├── CSVUtil.java
+    ├── Rutas.java
+    └── Validador.java
+```
 
 ---
 
 ## 🧩 Modelo de datos
 
-- **Producto**: hereda de `ProductoBase` y añade el atributo `stock`. Implementa:
-  - `calcularValorTotal()` → precio × stock
-  - `getTipoProducto()` → retorna `"ESTANDAR"`
-- **Categoría**: atributos `id`, `nombre`, `descripción`.
-- **Usuario** (implícito en `Persona`): usado para autenticación.
+### 📦 Producto
+
+* Hereda de `ProductoBase`
+* Atributos: id, nombre, precio, stock, categoría
+* Métodos:
+
+  * `calcularValorTotal()`
+  * `getTipoProducto()` → `"ESTANDAR"`
+
+### 🏷️ Categoría
+
+* Atributos:
+
+  * `id`
+  * `nombre`
+  * `descripcion`
+
+### 👤 Usuario
+
+* Basado en la clase `Persona`
+* Implementa autenticación mediante la interfaz `Autenticable`
 
 ---
 
-## 🚀 Cómo ejecutar
+## 🚀 Cómo ejecutar el proyecto
 
 1. Clona el repositorio:
+
    ```bash
    git clone https://github.com/OrellanaJheremiasT/POO-Proyecto.git
-Abre el proyecto en tu IDE (Eclipse, IntelliJ, NetBeans).
+   ```
 
-Compila y ejecuta la clase principal.
-Nota: La clase principal aún no está definida en este README; busca el archivo que contiene el método main (posiblemente en controller o en la raíz de src).
+2. Abre el proyecto en tu IDE:
 
-Asegúrate de que los archivos CSV (categorias.csv, productos.csv, usuarios.csv, logs.csv) existan en las rutas indicadas en Rutas.java (o créalos vacíos con cabeceras).
+   * IntelliJ IDEA
+   * Eclipse
+   * NetBeans
 
-📝 Licencia
-Este proyecto se distribuye bajo la licencia MIT.
+3. Ubica la clase con el método `main` y ejecútala.
+
+4. Asegúrate de tener los archivos CSV en las rutas correctas:
+
+   * `categorias.csv`
+   * `productos.csv`
+   * `usuarios.csv`
+   * `logs.csv`
+
+   👉 Si no existen, créalos vacíos (con o sin cabeceras según tu implementación).
+
+---
+
+## 📌 Notas
+
+* El proyecto sigue el patrón **MVC (Modelo - Vista - Controlador)**.
+* No utiliza base de datos, lo cual simplifica la implementación.
+* Ideal para demostrar conceptos de POO en un entorno académico.
+
+---
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia **MIT**.
