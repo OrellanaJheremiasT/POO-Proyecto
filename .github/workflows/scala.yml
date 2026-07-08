@@ -1,4 +1,4 @@
-name: Java CI
+name: Java Ant CI
 
 on:
   push:
@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Clonar repositorio
         uses: actions/checkout@v3
 
-      - name: Configurar Java
+      - name: Instalar Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Compilar
-        run: javac *.java
+      - name: Build con Ant
+        run: ant -noinput -buildfile build.xml
