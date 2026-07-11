@@ -8,7 +8,7 @@ package util;
 
 public class Rutas {
     // Directorio base de datos — relativo al directorio de ejecución
-    public static final String DIR_DATOS = "C:\\Users\\orell\\OneDrive\\Desktop\\POO-Proyecto\\src\\data\\";
+    public static final String DIR_DATOS = "src\\data\\";
 
     public static final String USUARIOS    = DIR_DATOS + "usuarios.csv";
     public static final String CATEGORIAS  = DIR_DATOS + "categorias.csv";

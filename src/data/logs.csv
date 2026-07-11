@@ -8,3 +8,4 @@ timestamp|usuarioId|accion|detalle
 2026-07-11 10:05:42|admin|LOGIN_OK|Sesión iniciada
 2026-07-11 10:24:16|admin|LOGIN_FALLIDO|Credenciales incorrectas
 2026-07-11 10:24:50|admin|LOGIN_OK|Sesión iniciada
+2026-07-11 10:35:15|admin|LOGIN_OK|Sesión iniciada
