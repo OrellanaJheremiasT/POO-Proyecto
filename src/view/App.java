@@ -57,8 +57,7 @@ public class App {
     private void mostrarBienvenida() {
         System.out.println("\033[1;35m");
         System.out.println("  ╔══════════════════════════════════════════════╗");
-        System.out.println("  ║    SISTEMA DE GESTIÓN DE PRODUCTOS v1.0     ║");
-        System.out.println("  ║         Arquitectura MVC + POO + CSV        ║");
+        System.out.println("  ║    SISTEMA DE GESTIÓN DE PRODUCTOS           ║");
         System.out.println("  ╚══════════════════════════════════════════════╝");
         System.out.println("\033[0m");
     }
