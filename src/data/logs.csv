@@ -1,0 +1,10 @@
+timestamp|usuarioId|accion|detalle
+2026-07-11 10:01:10|admin|LOGIN_OK|Sesión iniciada
+2026-07-11 10:01:31|admin|LOGIN_OK|Sesión iniciada
+2026-07-11 10:01:48|admin|CREAR_CATEGORIA|ID=001 Nombre=Ropa
+2026-07-11 10:02:19|admin|CREAR_PRODUCTO|ID=0001 Nombre=Casaca
+2026-07-11 10:03:36|admin|LOGIN_OK|Sesión iniciada
+2026-07-11 10:05:18|admin|LOGIN_OK|Sesión iniciada
+2026-07-11 10:05:42|admin|LOGIN_OK|Sesión iniciada
+2026-07-11 10:24:16|admin|LOGIN_FALLIDO|Credenciales incorrectas
+2026-07-11 10:24:50|admin|LOGIN_OK|Sesión iniciada

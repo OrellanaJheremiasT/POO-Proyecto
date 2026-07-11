@@ -1,0 +1,2 @@
+id,nombre,email,passwordHash,rol,activo
+admin,Jheremias Orellana,orellana@gmail.com,17c9e1f49,ADMINISTRADOR,true
